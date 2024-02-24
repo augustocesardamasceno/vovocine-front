@@ -22,6 +22,7 @@ export const Template: React.FC<TemplateProps> = ({ children, loading = false }:
                     </RenderIf>
                     { children }
                 </div> 
+                
             <Footer />
             <ToastContainer position='top-right' 
                             autoClose={8000}
@@ -74,18 +75,25 @@ const Header: React.FC = () => {
     }
 
     return (
-        <header className="bg-indigo-950 text-white py-3" >
+        <header className="bg-yellow-500 text-black py-3" >
             <div className="container mx-auto flex justify-between items-center px-4">
-                <Link href="/galeria">
-                    <h1 className="text-3xl font-bold">VovoCine</h1>
+                <Link href="/user-galeria">
+                    <h1 className="text-3xl font-bold familyFont">VovôCine</h1>
                 </Link>
                 <RenderIf condition={!!user}>
                     <div className="flex items-center">
                         <div className="relative">
-                            <span className="w-64 py-3 px-6 text-md">
+                        <span className="w-64 py-3 px-6 text-md familyFont">
                                 Olá, {user?.name}
                             </span>
-                            <span className="w-64 py-3 px-6 text-sm">
+                            <span className="w-64 py-3 px-3 text-md text-bold familyFont">
+                            <Link href="/user-galeria">Buscar</Link>
+                            </span>
+                            <span className="w-64 py-3 px-1 text-md text-bold familyFont">
+                                <Link href="/inicio-user">Tela inicial</Link>
+                            </span>
+                            
+                            <span className="w-64 py-3 px-6 text-sm familyFont">
                                 <a href="#" onClick={logout}>
                                     Sair
                                 </a>
@@ -100,7 +108,7 @@ const Header: React.FC = () => {
 
 const Footer: React.FC = () => {
     return (
-        <footer className="bg-indigo-950 text-white py-4 mt-8">
+        <footer className="bg-yellow-500 text-black py-4 mt-8 bottom-0">
             <div className="container mx-auto text-center">
                 Desenvolvido Augusto Damasceno
             </div>

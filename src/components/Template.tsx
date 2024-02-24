@@ -12,7 +12,7 @@ interface TemplateProps {
 
 export const Template: React.FC<TemplateProps> = ({ children, loading = false }: TemplateProps) => {
     return (
-        <>
+        <div>
             <Header />
                 <div className={`${loading ? 'animate-pulse' : ''} container mx-auto mt-8 px-4`}>
                     <RenderIf condition={loading}>
@@ -22,7 +22,7 @@ export const Template: React.FC<TemplateProps> = ({ children, loading = false }:
                     </RenderIf>
                     { children }
                 </div> 
-            <Footer />
+                <Footer />
             <ToastContainer position='top-right' 
                             autoClose={8000}
                             hideProgressBar={false}
@@ -30,7 +30,7 @@ export const Template: React.FC<TemplateProps> = ({ children, loading = false }:
                             closeOnClick={true}
                             pauseOnHover={true}
                     />
-        </>
+        </div>
     )
 }
 
@@ -74,24 +74,26 @@ const Header: React.FC = () => {
     }
 
     return (
-        <header className="bg-indigo-950 text-white py-3" >
+        <header className="bg-yellow-500 text-black py-3" >
             <div className="container mx-auto flex justify-between items-center px-4">
                 <Link href="/galeria">
-                    <h1 className="text-3xl font-bold">VovoCine</h1>
+                    <h1 className="text-3xl font-bold">VóVôCine</h1>
                 </Link>
                 <RenderIf condition={!!admin}>
                     <div className="flex items-center">
                         <div className="relative">
-                        <span className="w-64 py-3 px-6 text-md">
-                                <a href="">Home</a>
-                            </span>
                             <span className="w-64 py-3 px-6 text-md">
                                 Olá, {admin?.name}
                             </span>
-                            
-                            <span className="w-64 py-3 px-6 text-sm">
+                            <span className="w-64 py-3 px-3 text-md text-bold">
+                                <Link href="/galeria">Buscar</Link>
+                            </span>
+                            <span className="w-64 py-3 px-1 text-md text-bold">
+                                <Link href="/inicio">Tela inicial</Link>
+                            </span>
+                            <span className="w-64 py-3 px-3 text-sm text-bold">
                                 <a href="#" onClick={logout}>
-                                    Sair
+                                    | Sair |
                                 </a>
                             </span>
                         </div>
@@ -104,7 +106,7 @@ const Header: React.FC = () => {
 
 const Footer: React.FC = () => {
     return (
-        <footer className="bg-indigo-950 text-white py-4 mt-8">
+        <footer className="bg-yellow-500 text-black py-4 mt-8 bottom-0">
             <div className="container mx-auto text-center">
                 Desenvolvido Augusto Damasceno
             </div>

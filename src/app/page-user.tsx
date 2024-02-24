@@ -2,7 +2,7 @@
 
 import { useAuth} from '@/resources'
 import LoginPage from './loginUser/page'
-import MoviePage from './galeria-user/page'
+import MoviePage from './user-galeria/page'
 
 export default function Home() {
 

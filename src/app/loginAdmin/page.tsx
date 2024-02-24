@@ -135,7 +135,6 @@ export default function Login(){
                         </div>
                     </form>
                 </div>
-
             </div>
         </Template>
     )

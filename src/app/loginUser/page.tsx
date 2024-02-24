@@ -30,7 +30,7 @@ export default function LoginUser(){
                 try{
                     const userAccessToken: AcessToken = await auth.authenticate(userCredentials)
                     auth.initSession(userAccessToken)
-                    router.push("/galeria-user")
+                    router.push("/user-galeria")
                 } catch(error: any){
                     const message = error?.message;
                     notification.notify(message, "error")

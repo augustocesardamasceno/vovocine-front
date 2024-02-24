@@ -57,11 +57,12 @@ export default function GaleriaPage(){
         <AuthenticatedPage>
             <Template loading={loading}>            
                 <section className="flex flex-col items-center justify-center my-5">
-                    <div className="flex space-x-4">
-                        <InputText placeholder='Insira o título' onChange={event => setQuery(event.target.value)}/>
+                <h1 className='sizeTitle'>Procure o filme pelo nome</h1>
+                    <div className="flex space-x-4 m-8">
+                        <InputText placeholder='DIGITE O TÍTULO AQUI:' onChange={event => setQuery(event.target.value)}/>
                         <select onChange={event => setGenre(event.target.value)} 
                                 className="border px-4 py-2 rounded-lg text-gray-900">
-                            <option value="">Todos os gêneros</option>
+                            <option value="">CLIQUE AQUI E ESCOLHA O GÊNERO</option>
                             <option value="ACAO">Ação</option>
                             <option value="AVENTURA">Aventura</option>
                             <option value="COMEDIA">Comédia</option>
@@ -74,7 +75,7 @@ export default function GaleriaPage(){
                             
                         </select>
                         
-                        <Button style='bg-blue-500 hover:bg-blue-300' label='Search' onClick={searchMovies}/>
+                        <Button style='bg-blue-500 hover:bg-blue-300' label='Buscar' onClick={searchMovies}/>
                         
                         
                     </div>

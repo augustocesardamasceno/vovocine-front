@@ -25,7 +25,7 @@ export const MovieCard: React.FC<MovieCardProps> = ({
     }
 
     return (
-        <div className="card relative bg-white rounded-md shadow-md transition-tranform ease-in duration-300 transform hover:shadow-lg hover:-translate-y-2">
+        <div className="card relative bg-white rounded-md shadow-md transition-tranform ease-in duration-300 transform hover:shadow-lg hover:-translate-y-2 mb-20">
             <div onClick={toggleModal} className="h-85 w-full object-cover rounded-t-md cursor-pointer relative">
                 {/* Exibindo a imagem utilizando a propriedade src */}
                 <img src={src} className="h-full w-full object-cover rounded-t-md" alt="" />
@@ -33,7 +33,7 @@ export const MovieCard: React.FC<MovieCardProps> = ({
                     <button className="text-white text-lg">Fechar</button>
                 </div>
             </div>
-            <div className="card-body p-4">
+            <div className="card-body p-4 ">
                 <h5 className="text-xl font-semibold mb-2 text-gray-600">{movieTitle}</h5>
                 <p className="text-gray-600">{movieGenre}</p>
                 <p className="text-gray-600">Duração: {duration}</p>
